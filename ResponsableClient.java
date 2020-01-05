@@ -20,7 +20,7 @@ public class ResponsableClient {
             switch (userChoice) {
                 case 0:
                     break;
-                case 1:
+                case 1: //Afficher Liste Avis
                     clearScreen();
                     AfficherAvis(list);
                     break;
@@ -34,6 +34,24 @@ public class ResponsableClient {
                        System.out.println("<<<<<<<<Problem>>>>>>>>>>>>>");
                         menu();
                    }
+                    break;
+                case 3: //Modifier Avis
+                    AfficherAvis(list);
+                    Scanner input = new Scanner(System.in);
+                    System.out.print("Saisir id : " );
+                    int id = Integer.parseInt(input.nextLine()); 
+                    //input.nextLine();
+                    System.out.print("Saisir Modification : " );
+                    
+                    String descModified = input.nextLine();
+                   if(c.modifierAvis(descModified,id)){
+                       System.out.println("<<<<<<<Modfication Bien Effectue>>>>>>>");
+                        //menu();
+                   }else{
+                       System.out.println("<<<<<<<<Problem>>>>>>>>>>>>>");
+                       // menu();
+                   }
+
                     break;
                 default:
                     System.out.println("Choix Invalide"); 
@@ -61,6 +79,7 @@ public class ResponsableClient {
        AvisDescription= input.nextLine();
       return AvisDescription;
     }
+
     public static int menu() {
 
         int selection;

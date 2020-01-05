@@ -89,7 +89,7 @@ public class ResponsableImpl extends
       return list;   
    }  
 
-
+    //Ajout
    public boolean AjouterAvis(String desc) throws RemoteException {
         String sql = "INSERT INTO Avis (avis_desc) VALUES (?)";
         boolean rowInserted =false;
@@ -99,12 +99,29 @@ public class ResponsableImpl extends
          
          rowInserted = statement.executeUpdate() > 0;
         statement.close();
-        //disconnect();
-        
          }catch(SQLException e){
              e.printStackTrace();
                       }
         return rowInserted;
     }
+    public boolean modifierAvis(String desc,int id ) throws RemoteException {
+        String sql = "UPDATE avis SET avis_desc = ?";
+        sql += " WHERE id = ?";
+        boolean rowUpdated=false;
+        try{
+            PreparedStatement statement = con.prepareStatement(sql);
+            statement.setString(1, desc);
+            statement.setInt(2, id);
+            rowUpdated = statement.executeUpdate() > 0;
+            statement.close();
+            return rowUpdated;   
+        } catch(SQLException e){
+             e.printStackTrace();
+                      }
+        return rowUpdated;   
+          
+    }
+
+    
 } 
 
