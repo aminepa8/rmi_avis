@@ -88,5 +88,23 @@ public class ResponsableImpl extends
 	} 
       return list;   
    }  
+
+
+   public boolean AjouterAvis(String desc) throws RemoteException {
+        String sql = "INSERT INTO Avis (avis_desc) VALUES (?)";
+        boolean rowInserted =false;
+         try{
+            PreparedStatement statement = con.prepareStatement(sql);
+        statement.setString(1, desc);
+         
+         rowInserted = statement.executeUpdate() > 0;
+        statement.close();
+        //disconnect();
+        
+         }catch(SQLException e){
+             e.printStackTrace();
+                      }
+        return rowInserted;
+    }
 } 
 

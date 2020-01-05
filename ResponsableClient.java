@@ -18,9 +18,22 @@ public class ResponsableClient {
             List<Avis> list =  c.getAvisList(); //(List<Avis>)
             userChoice = menu();
             switch (userChoice) {
-
+                case 0:
+                    break;
                 case 1:
+                    clearScreen();
                     AfficherAvis(list);
+                    break;
+                case 2:
+                   clearScreen();
+                   boolean Test =  c.AjouterAvis(Ajouter_avis()); // HAHA confusing
+                   if(Test){
+                       System.out.println("<<<<<<<Bien Effectue>>>>>>>");
+                        menu();
+                   }else{
+                       System.out.println("<<<<<<<<Problem>>>>>>>>>>>>>");
+                        menu();
+                   }
                     break;
                 default:
                     System.out.println("Choix Invalide"); 
@@ -35,13 +48,18 @@ public class ResponsableClient {
     public static void AfficherAvis(List<Avis> list){
         System.out.println("=======================(Avis)========================" );
         for (Avis s:list) { 
-            
-            // System.out.println("bc "+s.getBranch()); 
             System.out.println("ID: " + s.getId()); 
             System.out.println("Avis : " + s.getAvis()); 
 
          }
          System.out.println("=======================(Fin-Avis)========================" );
+    }
+    public static String Ajouter_avis()  {
+        String AvisDescription ="";
+      Scanner input = new Scanner(System.in);
+      System.out.println("Saisire Avis : " );
+       AvisDescription= input.nextLine();
+      return AvisDescription;
     }
     public static int menu() {
 
@@ -51,17 +69,21 @@ public class ResponsableClient {
         /***************************************************/
         
         System.out.println("*********************MENU**************************");
-        System.out.println("-------------------------\n");
-        System.out.println("1 - Afficher la lite des Avis");
-        System.out.println("2 - Ajouter une Avis");
-        System.out.println("3 - Modifier Une Avie");
-        System.out.println("4 - Supprimer Une Avie");
-        System.out.println("4 - Quit");
+        System.out.println("[1] - Afficher la lite des Avis");
+        System.out.println("[2] - Ajouter une Avis");
+        System.out.println("[3] - Modifier Une Avie");
+        System.out.println("[4] - Supprimer Une Avie");
+        System.out.println("[0] - Quit");
         System.out.println("***********************************************");
         System.out.print("Saisir Votre Choix : ");
         selection = input.nextInt();
         return selection;    
     }
     
+    ///For later use Zwa9 and stuff
+    public static void clearScreen() {   
+    System.out.print("\033[H\033[2J");  
+    System.out.flush();  
+}  
 } 
 
