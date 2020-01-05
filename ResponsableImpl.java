@@ -122,6 +122,21 @@ public class ResponsableImpl extends
           
     }
 
-    
+    //Supprimer
+    public boolean SupprimerAvis(int id) throws RemoteException {
+        String sql = "DELETE FROM avis where id = ?";
+         boolean rowDeleted = false;
+        
+        try{
+            PreparedStatement statement = con.prepareStatement(sql);
+            statement.setInt(1, id);
+            rowDeleted = statement.executeUpdate() > 0;
+            statement.close();
+            return rowDeleted;    
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+         return rowDeleted;   
+    }
 } 
 

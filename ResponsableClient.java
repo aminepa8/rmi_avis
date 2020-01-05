@@ -46,12 +46,26 @@ public class ResponsableClient {
                     String descModified = input.nextLine();
                    if(c.modifierAvis(descModified,id)){
                        System.out.println("<<<<<<<Modfication Bien Effectue>>>>>>>");
+                       AfficherAvis(list);
                         //menu();
                    }else{
                        System.out.println("<<<<<<<<Problem>>>>>>>>>>>>>");
                        // menu();
                    }
 
+                    break;
+                case 4:
+                    AfficherAvis(list);
+                    Scanner in = new Scanner(System.in);
+                    System.out.print("Saisir id : " );
+                    int av_id = Integer.parseInt(in.nextLine()); 
+                    if(c.SupprimerAvis(av_id)){
+                       System.out.println("<<<<<<<Suppression Bien Effectue>>>>>>>");
+                        AfficherAvis(list);
+                   }else{
+                       System.out.println("<<<<<<<<Problem>>>>>>>>>>>>>");
+                       // menu();
+                   }
                     break;
                 default:
                     System.out.println("Choix Invalide"); 
