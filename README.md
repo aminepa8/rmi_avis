@@ -6,9 +6,9 @@ One Paragraph of project description goes here
 
 ### Prerequisites
 
- *Add the file mysql-connector.jar to the following directory
+ * Add the file mysql-connector.jar to the following directory
  C:\Program Files\Java\jre1.8.0_202\lib\ext
-*Create new database in your phpMyAdmin and name it 'detailsavis' after that import the detailsavis.sql file in the import section
+* Create new database in your phpMyAdmin and name it 'detailsavis' after that import the detailsavis.sql file in the import section
 
 ### Compiling 
 First Ghater all the *.java files in the same folder
