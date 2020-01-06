@@ -5,7 +5,7 @@
 
  * Add the file mysql-connector.jar to the following directory
  C:\Program Files\Java\jre1.8.0_202\lib\ext
- This  'jre1.8.0_202' is the installed jre version , you will probably found another version , somethin begin with jre
+ This  'jre1.8.0_202' is the installed jre version , you will probably found another version , something begin with jre
 * Create new database in your phpMyAdmin and name it 'detailsavis' after that import the detailsavis.sql file in the import section
 
 ### Compiling 
