@@ -1,9 +1,6 @@
 # rmi_avis
 
 
-One Paragraph of project description goes here
-
-
 ### Prerequisites
 
  * Add the file mysql-connector.jar to the following directory
